@@ -14,6 +14,9 @@
  * }
  */
 class Solution {
+    
+    // APPROACH 1 ---------LEVEL ORDER
+    /*
     public int findBottomLeftValue(TreeNode root) {
         
         
@@ -41,5 +44,27 @@ class Solution {
         }
         return leftmostnode;
         
+    }
+    */
+    
+    // APPROACH 2 ------------ RECURSIVE
+    int ans = 0;
+    int h = 0;
+    
+    public int findBottomLeftValue(TreeNode root) {
+        helper(root, 1);
+        return ans;
+    }
+    public void helper(TreeNode root, int depth){
+        if (root == null) return;
+        
+        // Gone to deeper height
+        if (h < depth){
+            h = depth;
+            ans = root.val;
+        }
+        // Always get leftmost node 1st when reach a new height as called Lc first
+        helper(root.left, depth+1);
+        helper(root.right, depth+1);
     }
 }
