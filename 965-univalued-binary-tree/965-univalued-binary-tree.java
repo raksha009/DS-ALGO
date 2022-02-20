@@ -31,4 +31,7 @@ class Solution {
         
         return (lans && rans);
     }
+    
+    // Approach 2
+    // Maintain a set (storing all nodes) n check if set.size() == 1
 }
