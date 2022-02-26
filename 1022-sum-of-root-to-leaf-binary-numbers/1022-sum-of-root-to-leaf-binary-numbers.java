@@ -36,9 +36,9 @@ class Solution {
             return;
         }
         
-        // path = path + ;
-        helper(root.left, path + String.valueOf(root.val));
-        helper(root.right, path + String.valueOf(root.val));
+        path = path + String.valueOf(root.val);
+        helper(root.left, path );
+        helper(root.right, path);
         
     }
 }
