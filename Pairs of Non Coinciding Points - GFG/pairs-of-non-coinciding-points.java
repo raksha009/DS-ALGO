@@ -69,7 +69,7 @@ class Solution {
         
         // traversing on map XY
         for (String key : mapXY.keySet()){
-            ans -= (mapXY.get(key)*(mapXY.get(key) - 1));
+            ans -= 2 * (mapXY.get(key)*(mapXY.get(key) - 1))/2;
         }
         return ans;
     }
